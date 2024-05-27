@@ -1,61 +1,79 @@
+//Authors
+//Emmanuel Álvarez Franco
+//Valeria Sucerquia Alvarez
 package com.ghi;
 import java.util.Date;
+import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        final Scanner scanner = new Scanner(System.in);
+        char inputRole;
+        System.out.println("Welcome to the characterization program by G.H.I.");
+
+        System.out.println("What role do you want to add?, please type E for employee, C for customer");
+        inputRole = scanner.next().toUpperCase().charAt(0);
+
+        if(inputRole=='E'){
+
+            //TODO hacer while para menu
+            registerEmployee();
+            searchEmployee();
+            updateEmployee();
+            removeEmployee();
+            listEmployee();
+        }
+        else if(inputRole=='C'){
+            //TODO hacer while para menu
+            registerCustomer();
+            searchCustomer();
+            updateCustomer();
+            removeCustomer();
+            listCustomer();
+        }
+        else{
+            System.out.println("Please type a valid option");
+        }
+
     }
-abstract class Person{
+//employee functions
+    private static void registerEmployee(){
+        final Scanner scanner = new Scanner(System.in);
+        String jobId;
+        do {
+            System.out.println("Please add your job ID");
+            jobId =scanner.nextLine();
+            
+        } while (jobId=='');
 
-protected String name= "Blank";
-protected String lastName;
-protected String emailAddress;
-protected Date dateOfBirth;
-protected int id;
-protected char gender;
+    }
+    private static void searchEmployee(){
 
-//getters
-public String getName() {
-    return name;
-}
+    }
+    private static void updateEmployee(){
 
-public String getLastName() {
-    return lastName;
-}
+    }
+    private static void removeEmployee(){
 
-public String getEmailAddress() {
-    return emailAddress;
-}
-public Date getDateOfBirth(){
-    return dateOfBirth;
-}
-public int getId(){
-    return id;
-}
-public char getGender(){
-    return gender;
-}
-//setters
-public void setName(String name) {
-    this.name = name;
-}
-public void setLastName(String lastName) {
-    this.lastName = lastName;
-}
-public void setEmailAddress(String emailAddress){
-    this.emailAddress = emailAddress;
-}
-public void setDateOfBirth(Date dateOfBirth){
-    this.dateOfBirth = dateOfBirth;
-}
-public void setId(int id){
-    this.id = id;
-}
-public void setChar(char gender){
-    this.gender = gender;
-}
+    }
+    private static void listEmployee(){
 
-}
+    }
+    //customer functions
+    private static void registerCustomer(){
 
+    }
+    private static void searchCustomer(){
 
+    }
+    private static void updateCustomer(){
+
+    }
+    private static void removeCustomer(){
+
+    }
+    private static void listCustomer(){
+        
+    }
 }
