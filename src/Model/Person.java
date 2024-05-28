@@ -49,5 +49,12 @@ public void setId(int id){
 public void setChar(char gender){
     this.gender = gender;
 }
-
+public Person(String name, String lastName, String emailAddress, String dateOfBirth, String id, char gender){
+    this.name = name;
+    this.lastName = lastName;
+    this.emailAddress = emailAddress;
+    this.dateOfBirth = dateOfBirth;
+    this.id = id;
+    this.gender = gender;
+}
 }
