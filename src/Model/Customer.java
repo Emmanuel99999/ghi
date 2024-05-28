@@ -37,7 +37,7 @@ public class Customer extends Person {
         this.referralProgram = referralProgram;
     }
 
-    public Customer(String name, String lastName, String emailAddress, String dateOfBirth, String id, char gender)
+    public Customer(String name, String lastName, String emailAddress, String dateOfBirth, char gender2, String id, char gender, char news2, char discounts2, char promos2, char referralProgram2)
     {
         super(name,lastName,emailAddress,dateOfBirth,id,gender);
         this.advertise =advertise;

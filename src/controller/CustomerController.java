@@ -8,7 +8,7 @@ public class CustomerController extends PersonController{
     ArrayList<Customer> listObjCustomers = new ArrayList<Customer>();
 
     @Override
-    public boolean register(Customer objCustomer, Employee objEmployee){
+    public boolean register(Employee objEmployee, Customer objCustomer){
         if(objCustomer != null){
             listObjCustomers.add(objCustomer);
             return true;
@@ -69,4 +69,5 @@ public class CustomerController extends PersonController{
         }
         return resultList;
     }
+
 }

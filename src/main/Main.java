@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class Main {
     private static Scanner scanner= new Scanner(System.in);
     private static CustomerController objCustomerController = new CustomerController();
+    private static EmployeeController objEmployeeController = new EmployeeController();
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);
         char inputRole;
@@ -80,7 +81,7 @@ public class Main {
             //TODO crear objeto cuenta
 
             Employee objEmployee = new Employee(jobId,id,name,lastName,dateOfBirth,gender,emailAddress,password,wage,title,startingDate);
-            if(objEmployee.register(objEmployee,null)){
+            if(objEmployeeController.register(objEmployee, null)){
                 System.out.println("\n Customer has been successfully created!");
             } else {
                 System.out.println("\n Customer not created, please try again");

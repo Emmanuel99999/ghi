@@ -45,7 +45,7 @@ public class Employee extends Person{
     public void setAccountStatus(boolean accountStatus) {
         this.accountStatus = accountStatus;
     }
-    public Employee(String name, String lastName, String emailAddress, String dateOfBirth, String id, char gender){
+    public Employee(String name, String lastName, String emailAddress, String dateOfBirth, String id, char gender, String emailAddress2, String password2, float wage2, String title2, String startingDate2){
         super(name,lastName,emailAddress,dateOfBirth,id,gender);
         this.password = password;
         this.jobId = jobId;

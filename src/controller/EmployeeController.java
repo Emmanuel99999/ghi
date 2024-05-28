@@ -1,6 +1,7 @@
 package controller;
 import java.util.ArrayList;
 
+import model.Customer;
 import model.Employee;
 import model.employee;
 
@@ -9,7 +10,7 @@ public class EmployeeController extends PersonController {
     ArrayList<Employee> listObjEmployees = new ArrayList<Employee>();
 
     @Override
-    boolean register(Customer objCustomer, Employee objEmployee){
+    public boolean register(Employee objEmployee, Customer objCustomer){
         if(objEmployee != null){
             listObjEmployees.add(objEmployee);
             return true;
