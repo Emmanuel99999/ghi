@@ -1,8 +1,7 @@
 //Authors
 //Emmanuel Álvarez Franco
 //Valeria Sucerquia Alvarez
-package com.ghi;
-import model.Person;
+package Main;
 import model.Employee;
 import model.Customer;
 import controller.EmployeeController;
@@ -10,6 +9,8 @@ import java.util.Scanner;
 //import classes
 
 public class Main {
+    private static Scanner scanner= new Scanner(System.in);
+    private static CustomerController objCustomerController = new CustomerController();
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);
         char inputRole;
@@ -45,7 +46,6 @@ public class Main {
         final Scanner scanner = new Scanner(System.in);
         char answer;
         do{
-            scanner.nextLine();
             String jobId ="";
         do {
             System.out.println("Please add your job ID");
@@ -80,7 +80,7 @@ public class Main {
 
             Employee objEmployee = new Employee(jobId,id,name,lastName,dateOfBirth,gender,emailAddress,password,wage,title,startingDate);
             if(objEmployee.register(objEmployee,null)){
-                System.out.println("\n Customer has been succesfully created!");
+                System.out.println("\n Customer has been successfully created!");
             } else {
                 System.out.println("\n Customer not created, please try again");
             }

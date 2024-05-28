@@ -1,6 +1,6 @@
-package com.ghi;
+package model;
 import model.Person;
-class Customer extends Person {
+public class Customer extends Person {
     private char advertise;
     private char news;
     private char discounts;

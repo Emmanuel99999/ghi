@@ -1,12 +1,17 @@
 package controller;
 import java.util.ArrayList;
+
+import model.Employee;
 import model.employee;
 
 public class EmployeeController extends PersonController {
+
+    ArrayList<Employee> listObjEmployees = new ArrayList<Employee>();
+
     @Override
     boolean register(Customer objCustomer, Employee objEmployee){
         if(objEmployee != null){
-            listObjEmployee.add(objEmployee);
+            listObjEmployees.add(objEmployee);
             return true;
         } else{
             return false;
@@ -16,12 +21,12 @@ public class EmployeeController extends PersonController {
     public String search(String name){
         String result = "";
 
-        for (int i = 0; i < listObjEmployee.size(); i++) {
-            if(listObjEmployee.get(i).getName().equals(name)){
-                result = listObjEmployee.get(i).getJobId()+ " - "
-                + listObjEmployee.get(i).getName() + " - "
-                + listObjEmployee.get(i).getLastName()+ " - "
-                +listObjEmployee.get(i).getTitle();
+        for (int i = 0; i < listObjEmployees.size(); i++) {
+            if(listObjEmployees.get(i).getName().equals(name)){
+                result = listObjEmployees.get(i).getJobId()+ " - "
+                + listObjEmployees.get(i).getName() + " - "
+                + listObjEmployees.get(i).getLastName()+ " - "
+                +listObjEmployees.get(i).getTitle();
             }
         }
     }
@@ -29,7 +34,7 @@ public class EmployeeController extends PersonController {
     public boolean update(String name, Employee objEmployee, Customer objCustomer){
         boolean result =false;
 
-        for(Employee objEmployee :listObjEmployee){
+        for(Employee objEmployee :listObjEmployees){
             if(objEmployee.getName().equals(name)){
                 objEmployee.setJobId(objEmployee.getJobId());
                 objEmployee.setName(objEmployee.getName());
@@ -46,9 +51,9 @@ public class EmployeeController extends PersonController {
     public boolean remove(String name){
         boolean result = false;
     
-        for (Employee objEmployee :listObjEmployee){
+        for (Employee objEmployee :listObjEmployees){
             if(objEmployee.getName().equals(name)){
-                listObjEmployee.remove(objEmployee);
+                listObjEmployees.remove(objEmployee);
                 result =true;
                 break;
             }
@@ -56,12 +61,12 @@ public class EmployeeController extends PersonController {
     }
     @Override
     public String list() {
-        string resultList ="";
-        for (int i = 0; i < listObjEmployee.size(); i++) {
-            resultList += listObjEmployee.get(i).getJobId()+ " - "
-            +listObjEmployee.get(i).getName()+ " - "
-            +listObjEmployee.get(i).getLastName()+ " - "
-            +listObjEmployee.get(i).getTitle()
+        String resultList ="";
+        for (int i = 0; i < listObjEmployees.size(); i++) {
+            resultList += listObjEmployees.get(i).getJobId()+ " - "
+            +listObjEmployees.get(i).getName()+ " - "
+            +listObjEmployees.get(i).getLastName()+ " - "
+            +listObjEmployees.get(i).getTitle()
             +"\n";
         }
         return resultList;

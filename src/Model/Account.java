@@ -1,4 +1,4 @@
-package com.ghi;
+package model;
 
 
 public class Account {

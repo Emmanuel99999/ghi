@@ -1,8 +1,16 @@
-public class CustomerController {
+package controller;
+import java.util.ArrayList;
+import model.Customer;
+import model.Employee;
+
+public class CustomerController extends PersonController{
+
+    ArrayList<Customer> listObjCustomers = new ArrayList<Customer>();
+
     @Override
-    boolean register(Customer objCustomer, Employee objEmployee){
+    public boolean register(Customer objCustomer, Employee objEmployee){
         if(objCustomer != null){
-            listObjCustomer.add(objCustomer);
+            listObjCustomers.add(objCustomer);
             return true;
         } else{
             return false;
@@ -12,12 +20,12 @@ public class CustomerController {
     public String search(String name){
         String result = "";
 
-        for (int i = 0; i < listObjCustomer.size(); i++) {
-            if(listObjCustomer.get(i).getName().equals(name)){
-                result = listObjCustomer.get(i).getJobId()+ " - "
-                + listObjCustomer.get(i).getName() + " - "
-                + listObjCustomer.get(i).getLastName()+ " - "
-                +listObjCustomer.get(i).getTitle();
+        for (int i = 0; i < listObjCustomers.size(); i++) {
+            if(listObjCustomers.get(i).getName().equals(name)){
+                result = listObjCustomers.get(i).getId()+ " - "
+                + listObjCustomers.get(i).getName() + " - "
+                + listObjCustomers.get(i).getLastName()+ " - "
+                +listObjCustomers.get(i).getAdvertise();
             }
         }
     }
@@ -25,12 +33,12 @@ public class CustomerController {
     public boolean update(String name, Employee objEmployee, Customer objCustomer){
         boolean result =false;
 
-        for(Customer objCustomer :listObjCustomer){
+        for(Customer objCustomer :listObjCustomers){
             if(objCustomer.getName().equals(name)){
-                objCustomer.setJobId(objCustomer.getJobId());
+                objCustomer.setId(objCustomer.getId());
                 objCustomer.setName(objCustomer.getName());
                 objCustomer.setLastName(objCustomer.getLastName());
-                objCustomer.setTitle(objCustomer.getTitle());
+                objCustomer.setAdvertise(objCustomer.getAdvertise());
 
                 result = true;
             }
@@ -41,9 +49,9 @@ public class CustomerController {
     @Override
     public boolean remove(String name){
         boolean result = false;
-        for (Customer objCustomer :listObjCustomer){
+        for (Customer objCustomer :listObjCustomers){
             if(objCustomer.getName().equals(name)){
-                listObjCustomer.remove(objCustomer);
+                listObjCustomers.remove(objCustomer);
                 result =true;
                 break;
             }
@@ -51,12 +59,12 @@ public class CustomerController {
     }
     @Override
     public String list() {
-        string resultList ="";
-        for (int i = 0; i < listObjCustomer.size(); i++) {
-            resultList += listObjCustomer.get(i).getJobId()+ " - "
-            +listObjCustomer.get(i).getName()+ " - "
-            +listObjCustomer.get(i).getLastName()+ " - "
-            +listObjCustomer.get(i).getTitle()
+        String resultList ="";
+        for (int i = 0; i < listObjCustomers.size(); i++) {
+            resultList += listObjCustomers.get(i).getId()+ " - "
+            +listObjCustomers.get(i).getName()+ " - "
+            +listObjCustomers.get(i).getLastName()+ " - "
+            +listObjCustomers.get(i).getAdvertise()
             +"\n";
         }
         return resultList;

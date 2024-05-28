@@ -1,6 +1,7 @@
-package com.ghi;
-import model.Person;
-class Employee extends Person{
+package model;
+
+public class Employee extends Person{
+
     private String password;
     private String jobId;
     private float wage;

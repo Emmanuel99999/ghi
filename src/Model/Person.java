@@ -1,5 +1,5 @@
-package com.ghi;
-import main.Main;
+package model;
+
 abstract class Person{
 
 protected String name= "Blank";
@@ -21,10 +21,10 @@ public String getLastName() {
 public String getEmailAddress() {
     return emailAddress;
 }
-public Date getDateOfBirth(){
+public String getDateOfBirth(){
     return dateOfBirth;
 }
-public int getId(){
+public String getId(){
     return id;
 }
 public char getGender(){
@@ -40,10 +40,10 @@ public void setLastName(String lastName) {
 public void setEmailAddress(String emailAddress){
     this.emailAddress = emailAddress;
 }
-public void setDateOfBirth(Date dateOfBirth){
+public void setDateOfBirth(String dateOfBirth){
     this.dateOfBirth = dateOfBirth;
 }
-public void setId(int id){
+public void setId(String id){
     this.id = id;
 }
 public void setChar(char gender){
