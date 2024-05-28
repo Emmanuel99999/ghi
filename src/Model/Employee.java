@@ -4,6 +4,6 @@ class Employee extends Person{
     protected int jobId;
     protected float wage;
     protected String title;
-    protected Date startingDate;
+    protected String startingDate;
     protected boolean accountStatus;
 }

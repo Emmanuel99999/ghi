@@ -40,12 +40,35 @@ public class Main {
 //employee functions
     private static void registerEmployee(){
         final Scanner scanner = new Scanner(System.in);
-        String jobId;
+        String jobId="";
         do {
             System.out.println("Please add your job ID");
             jobId =scanner.nextLine();
             
-        } while (jobId=='');
+        } while (jobId=="");{
+            System.out.println("Please type your name.");
+            String name = scanner.nextLine();
+            System.out.println("Please type your last name.");
+            String lastName = scanner.nextLine();
+            System.out.println("Please type your date of birth.");
+            String dateOfBirth= scanner.nextLine();
+            System.out.println("Please type your gender, M: male, F: female, O: other");
+            char gender = scanner.next().toUpperCase().charAt(0);
+            String empty = scanner.nextLine();
+            System.out.println("Please type your email address.");
+            String emailAddress = scanner.nextLine();
+            System.out.println("Please enter your new password.");
+            String password = scanner.nextLine();
+            System.out.println("Please enter your monthly wage.");
+            float wage = scanner.nextFloat();
+            empty = scanner.nextLine();
+            System.out.println("Please enter your current job position.");
+            String title = scanner.nextLine();
+            System.out.println("Please enter your sign in day.");
+            String startingDate= scanner.nextLine();
+            //System.out.println(name+lastName+dateOfBirth+gender+emailAddress+password+wage+title+startingDate);
+        }
+        
 
     }
     private static void searchEmployee(){

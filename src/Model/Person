@@ -3,7 +3,7 @@ abstract class Person{
 protected String name= "Blank";
 protected String lastName;
 protected String emailAddress;
-protected Date dateOfBirth;
+protected String dateOfBirth;
 protected int id;
 protected char gender;
 
