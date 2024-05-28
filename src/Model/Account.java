@@ -1,4 +1,5 @@
-package com;
+package com.ghi;
+
 
 public class Account {
 

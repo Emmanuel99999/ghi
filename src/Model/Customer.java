@@ -1,9 +1,10 @@
 package com.ghi;
+import model.Person;
 class Customer extends Person {
-    protected boolean advertise;
-    protected boolean news;
-    protected boolean discounts;
-    protected boolean promos;
-    protected boolean referralProgram;
+    protected char advertise;
+    protected char news;
+    protected char discounts;
+    protected char promos;
+    protected char referralProgram;
 
 }

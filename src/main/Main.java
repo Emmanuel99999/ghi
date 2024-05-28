@@ -2,9 +2,14 @@
 //Emmanuel Álvarez Franco
 //Valeria Sucerquia Alvarez
 package com.ghi;
+import model.Employee;
+import model.Customer;
+import model.Person;
+import model.Account;
+
 import java.util.Date;
 import java.util.Scanner;
-
+//import classes
 
 public class Main {
     public static void main(String[] args) {
@@ -44,8 +49,9 @@ public class Main {
         do {
             System.out.println("Please add your job ID");
             jobId =scanner.nextLine();
-            
         } while (jobId=="");{
+            System.out.println("Please type your government Id");
+            String id = scanner.nextLine();
             System.out.println("Please type your name.");
             String name = scanner.nextLine();
             System.out.println("Please type your last name.");
@@ -67,8 +73,11 @@ public class Main {
             System.out.println("Please enter your sign in day.");
             String startingDate= scanner.nextLine();
             //System.out.println(name+lastName+dateOfBirth+gender+emailAddress+password+wage+title+startingDate);
+
+            //TODO crear objeto cuenta
+
+            Employee objEmployee = new Employee(jobId,id,name,lastName,dateOfBirth,gender,emailAddress,password,wage,title,startingDate);
         }
-        
 
     }
     private static void searchEmployee(){
@@ -85,8 +94,39 @@ public class Main {
     }
     //customer functions
     private static void registerCustomer(){
+        String id = "";
+        final Scanner scanner = new Scanner(System.in);
+        do {
+        System.out.println("Please type your government Id");
+        id = scanner.nextLine();
+    } while (id=="");{
 
+        System.out.println("Please type your name.");
+        String name = scanner.nextLine();
+        System.out.println("Please type your last name.");
+        String lastName = scanner.nextLine();
+        System.out.println("Please type your date of birth.");
+        String dateOfBirth= scanner.nextLine();
+        System.out.println("Please type your gender, M: male, F: female, O: other");
+        char gender = scanner.next().toUpperCase().charAt(0);
+        String empty = scanner.nextLine();
+        System.out.println("Please type your email address.");
+        String emailAddress = scanner.nextLine();
+        System.out.println("Would you like to subscribe to our advertisements? Y for yes, N for no");
+        char advertise = scanner.next().toUpperCase().charAt(0);
+        System.out.println("would you like to subscribe to our newsletter?");
+        char news = scanner.next().toUpperCase().charAt(0);
+        System.out.println("Would you like to subscribe to our discounts?");
+        char discounts = scanner.next().toUpperCase().charAt(0);
+        System.out.println("would you like to subscribe to our promotion campaigns?");
+        char promos = scanner.next().toUpperCase().charAt(0);
+        System.out.println("would you like to participate on our referral program?");
+        char referralProgram = scanner.next().toUpperCase().charAt(0);
+
+       // System.out.println(name+lastName+dateOfBirth+gender+emailAddress+advertise+news+discounts+promos+referralProgram);
+        Customer objCustomer =new Customer(id,name,lastName,dateOfBirth,gender,emailAddress,advertise,news,discounts,promos,referralProgram);
     }
+}
     private static void searchCustomer(){
 
     }
@@ -97,6 +137,5 @@ public class Main {
 
     }
     private static void listCustomer(){
-        
     }
 }

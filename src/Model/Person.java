@@ -1,10 +1,12 @@
+package com.ghi;
+import main.Main;
 abstract class Person{
 
 protected String name= "Blank";
 protected String lastName;
 protected String emailAddress;
 protected String dateOfBirth;
-protected int id;
+protected String id;
 protected char gender;
 
 //getters
