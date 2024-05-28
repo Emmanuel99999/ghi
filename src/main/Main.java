@@ -103,23 +103,32 @@ public class Main {
 
         System.out.println("Please type your name.");
         String name = scanner.nextLine();
+
         System.out.println("Please type your last name.");
         String lastName = scanner.nextLine();
+
         System.out.println("Please type your date of birth.");
         String dateOfBirth= scanner.nextLine();
+
         System.out.println("Please type your gender, M: male, F: female, O: other");
         char gender = scanner.next().toUpperCase().charAt(0);
         String empty = scanner.nextLine();
+
         System.out.println("Please type your email address.");
         String emailAddress = scanner.nextLine();
+
         System.out.println("Would you like to subscribe to our advertisements? Y for yes, N for no");
         char advertise = scanner.next().toUpperCase().charAt(0);
+
         System.out.println("would you like to subscribe to our newsletter?");
         char news = scanner.next().toUpperCase().charAt(0);
+
         System.out.println("Would you like to subscribe to our discounts?");
         char discounts = scanner.next().toUpperCase().charAt(0);
+
         System.out.println("would you like to subscribe to our promotion campaigns?");
         char promos = scanner.next().toUpperCase().charAt(0);
+        
         System.out.println("would you like to participate on our referral program?");
         char referralProgram = scanner.next().toUpperCase().charAt(0);
 
