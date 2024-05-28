@@ -28,6 +28,7 @@ public class CustomerController extends PersonController{
                 +listObjCustomers.get(i).getAdvertise();
             }
         }
+        return result;
     }
     @Override
     public boolean update(String name, Employee objEmployee, Customer objCustomer){
@@ -56,6 +57,7 @@ public class CustomerController extends PersonController{
                 break;
             }
         }
+        return result;
     }
     @Override
     public String list() {

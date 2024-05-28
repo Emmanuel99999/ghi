@@ -30,6 +30,7 @@ public class EmployeeController extends PersonController {
                 +listObjEmployees.get(i).getTitle();
             }
         }
+        return result;
     }
     @Override
     public boolean update(String name, Employee objEmployee, Customer objCustomer){
@@ -59,6 +60,7 @@ public class EmployeeController extends PersonController {
                 break;
             }
         }
+        return result;
     }
     @Override
     public String list() {
