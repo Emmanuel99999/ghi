@@ -5,6 +5,7 @@ package Main;
 import model.Employee;
 import model.Customer;
 import controller.EmployeeController;
+import controller.CustomerController;
 import java.util.Scanner;
 //import classes
 
