@@ -1,5 +1,4 @@
 package model;
-import model.Person;
 public class Customer extends Person {
     private char advertise;
     private char news;

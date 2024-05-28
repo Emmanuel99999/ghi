@@ -90,6 +90,7 @@ public class Main {
             //System.out.println(name+lastName+dateOfBirth+gender+emailAddress+password+wage+title+startingDate);
 
             //TODO crear objeto cuenta
+            
 
             Employee objEmployee = new Employee(name, lastName, emailAddress, dateOfBirth, id, gender, password, jobId, wage, title, startingDate, accountStatus);
             if(objEmployeeController.register(objEmployee, null)){
