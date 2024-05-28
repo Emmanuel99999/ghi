@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 import model.Customer;
 import model.Employee;
-import model.employee;
 
 public class EmployeeController extends PersonController {
 

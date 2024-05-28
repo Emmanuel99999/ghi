@@ -7,7 +7,7 @@ public class Employee extends Person{
     private float wage;
     private String title;
     private String startingDate;
-    private boolean accountStatus;
+    private boolean accountStatus= true;
 
     public String getPassword() {
         return password;
@@ -45,7 +45,7 @@ public class Employee extends Person{
     public void setAccountStatus(boolean accountStatus) {
         this.accountStatus = accountStatus;
     }
-    public Employee(String name, String lastName, String emailAddress, String dateOfBirth, String id, char gender, String emailAddress2, String password2, float wage2, String title2, String startingDate2){
+    public Employee(String name, String lastName, String emailAddress, String dateOfBirth, String id, char gender, String password,String jobId, float wage, String title, String startingDate, boolean accountStatus){
         super(name,lastName,emailAddress,dateOfBirth,id,gender);
         this.password = password;
         this.jobId = jobId;
@@ -54,5 +54,5 @@ public class Employee extends Person{
         this.startingDate = startingDate;
         this.accountStatus = accountStatus;
 
-    }
+    } //(name, lastName, emailAddress, dateOfBirth, id, gender, password, jobId, wage, title, startingDate, accountStatus)
 }

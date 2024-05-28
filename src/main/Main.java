@@ -84,12 +84,14 @@ public class Main {
 
             System.out.println("Please enter your sign in day.");
             String startingDate= scanner.nextLine();
+            
+            boolean accountStatus =true;
 
             //System.out.println(name+lastName+dateOfBirth+gender+emailAddress+password+wage+title+startingDate);
 
             //TODO crear objeto cuenta
 
-            Employee objEmployee = new Employee(jobId,id,name,lastName,dateOfBirth,gender,emailAddress,password,wage,title,startingDate);
+            Employee objEmployee = new Employee(name, lastName, emailAddress, dateOfBirth, id, gender, password, jobId, wage, title, startingDate, accountStatus);
             if(objEmployeeController.register(objEmployee, null)){
                 System.out.println("\n Employee has been successfully created!");
             } else {
@@ -100,7 +102,6 @@ public class Main {
             if(answer=='C'){
                 registerCustomer();
             }
-            
         } while (answer=='Y');
 
     }
@@ -177,7 +178,7 @@ public class Main {
         System.out.println("Employee's list.");
         String resultList = objEmployeeController.list();
 
-        if (resultList!= "") {  
+        if (resultList!= "") {
         System.out.println(resultList);
         } else{
             System.out.println("The Employee's list is empty.");
@@ -225,7 +226,7 @@ public class Main {
         char referralProgram = scanner.next().toUpperCase().charAt(0);
 
        // System.out.println(name+lastName+dateOfBirth+gender+emailAddress+advertise+news+discounts+promos+referralProgram);
-        Customer objCustomer =new Customer(id,name,lastName,dateOfBirth,gender,emailAddress,advertise,news,discounts,promos,referralProgram);
+        Customer objCustomer =new Customer(name, lastName, emailAddress, dateOfBirth, id, gender, advertise, news, discounts, promos, referralProgram );
         if(objCustomerController.register(null, objCustomer)){
             System.out.println("\n Customer has been successfully created!");
         } else {
@@ -265,7 +266,7 @@ public class Main {
         System.out.println("Customer's list.");
         String resultList = objCustomerController.list();
 
-        if (resultList!= "") {  
+        if (resultList!= "") {
         System.out.println(resultList);
         } else{
             System.out.println("The Customer's list is empty.");
