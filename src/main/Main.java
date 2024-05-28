@@ -2,12 +2,10 @@
 //Emmanuel Álvarez Franco
 //Valeria Sucerquia Alvarez
 package com.ghi;
+import model.Person;
 import model.Employee;
 import model.Customer;
-import model.Person;
-import model.Account;
-
-import java.util.Date;
+import controller.EmployeeController;
 import java.util.Scanner;
 //import classes
 
@@ -45,11 +43,15 @@ public class Main {
 //employee functions
     private static void registerEmployee(){
         final Scanner scanner = new Scanner(System.in);
-        String jobId="";
+        char answer;
+        do{
+            scanner.nextLine();
+            String jobId ="";
         do {
             System.out.println("Please add your job ID");
             jobId =scanner.nextLine();
-        } while (jobId=="");{
+        } while (jobId=="");
+
             System.out.println("Please type your government Id");
             String id = scanner.nextLine();
             System.out.println("Please type your name.");
@@ -77,7 +79,14 @@ public class Main {
             //TODO crear objeto cuenta
 
             Employee objEmployee = new Employee(jobId,id,name,lastName,dateOfBirth,gender,emailAddress,password,wage,title,startingDate);
-        }
+            if(objEmployee.register(objEmployee,null)){
+                System.out.println("\n Customer has been succesfully created!");
+            } else {
+                System.out.println("\n Customer not created, please try again");
+            }
+            System.out.println("Would you like to add another person? Y/N");
+            answer= scanner.next().toUpperCase().charAt(0);
+        } while (answer=='Y');
 
     }
     private static void searchEmployee(){
@@ -128,7 +137,7 @@ public class Main {
 
         System.out.println("would you like to subscribe to our promotion campaigns?");
         char promos = scanner.next().toUpperCase().charAt(0);
-        
+
         System.out.println("would you like to participate on our referral program?");
         char referralProgram = scanner.next().toUpperCase().charAt(0);
 
