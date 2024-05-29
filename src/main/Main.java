@@ -14,28 +14,60 @@ public class Main {
     private static CustomerController objCustomerController = new CustomerController();
     private static EmployeeController objEmployeeController = new EmployeeController();
     public static void main(String[] args) {
+        System.out.println("Welcome to the characterization program by G.H.I.");
+        menu();
+    }
+    private static void menu(){
         final Scanner scanner = new Scanner(System.in);
         char inputRole;
-        System.out.println("Welcome to the characterization program by G.H.I.");
-        System.out.println("What role do you want to add?, please type E for employee, C for customer");
+        System.out.println("What role do you want to use?, please type E for employee, C for customer");
         inputRole = scanner.next().toUpperCase().charAt(0);
 
         if(inputRole=='E'){
-
-            //TODO hacer while para menu
-            registerEmployee();
-            searchEmployee();
-            updateEmployee();
-            removeEmployee();
-            listEmployee();
+            System.out.println("Please choose an option  \n R register employee  \n S search employee \n U update employee \n D Delete employee \n L list employee ");
+            char option = scanner.next().toUpperCase().charAt(0);
+            switch (option) {
+                case 'R':
+                registerEmployee();
+                    break;
+                case 'S':
+                searchEmployee();
+                    break;
+                case 'U':
+                updateEmployee();
+                    break;
+                case 'D':
+                removeEmployee();
+                case 'L':
+                listEmployee();
+                    break;
+                default:
+                listEmployee();
+                    break;
+            }
         }
         else if(inputRole=='C'){
-            //TODO hacer while para menu
-            registerCustomer();
-            searchCustomer();
-            updateCustomer();
-            removeCustomer();
-            listCustomer();
+            System.out.println("Please choose an option  \n R register customer  \n S search customer \n U update customer \n D Delete customer \n L list customer ");
+            char option = scanner.next().toUpperCase().charAt(0);
+            switch (option) {
+                case 'R':
+                registerCustomer();
+                    break;
+                case 'S':
+                searchCustomer();
+                    break;
+                case 'U':
+                updateCustomer();
+                    break;
+                case 'D':
+                removeCustomer();
+                case 'L':
+                listCustomer();
+                    break;
+                default:
+                listCustomer();
+                    break;
+            }
         }
         else{
             System.out.println("Please type a valid option");
@@ -84,13 +116,11 @@ public class Main {
 
             System.out.println("Please enter your sign in day.");
             String startingDate= scanner.nextLine();
-            
             boolean accountStatus =true;
 
             //System.out.println(name+lastName+dateOfBirth+gender+emailAddress+password+wage+title+startingDate);
 
             //TODO crear objeto cuenta
-            
 
             Employee objEmployee = new Employee(name, lastName, emailAddress, dateOfBirth, id, gender, password, jobId, wage, title, startingDate, accountStatus);
             if(objEmployeeController.register(objEmployee, null)){
@@ -98,13 +128,14 @@ public class Main {
             } else {
                 System.out.println("\n Employee not created, please try again");
             }
-            System.out.println("Would you like to add another employee? Y for employee, C for customer, N to end.");
+            System.out.println("Would you like to add another record? Y for employee, C for customer, N to end.");
             answer= scanner.next().toUpperCase().charAt(0);
+            empty = scanner.nextLine();
             if(answer=='C'){
                 registerCustomer();
             }
         } while (answer=='Y');
-
+        menu();
     }
     private static void searchEmployee(){
         System.out.println("Please type the Employee's name to search");
@@ -115,7 +146,7 @@ public class Main {
         } else{
             System.out.println("\n Employee not found...");
         }
-
+        menu();
     }
     private static void updateEmployee(){
         System.out.println("type the Employees name to update");
@@ -162,6 +193,7 @@ public class Main {
             System.out.println("Please enter your sign in day.");
             String startingDate= scanner.nextLine();
         }
+        menu();
     }
     private static void removeEmployee(){
         System.out.println(" Please type the employee to delete.");
@@ -174,6 +206,7 @@ public class Main {
         } else {
             System.out.println("The employee was not found, try again!");
         }
+        menu();
     }
     private static void listEmployee(){
         System.out.println("Employee's list.");
@@ -184,6 +217,7 @@ public class Main {
         } else{
             System.out.println("The Employee's list is empty.");
         }
+        menu();
     }
     //customer functions
     private static void registerCustomer(){
@@ -233,12 +267,15 @@ public class Main {
         } else {
             System.out.println("\n Customer not created, please try again");
         }
-        System.out.println("Would you like to add another Customer? Y for Customer, E for Employee, N to end");
+        System.out.println("Would you like to add another record? Y for Customer, E for Employee, N to end");
         answer= scanner.next().toUpperCase().charAt(0);
+        empty = scanner.nextLine();
         if(answer=='E'){
             registerEmployee();
         }
+        
     } while (answer=='Y');
+    menu();
     }
     private static void searchCustomer(){
         System.out.println("Please type the Customer's name to search");
@@ -249,8 +286,10 @@ public class Main {
         } else{
             System.out.println("\n Customer not found...");
         }
+        menu();
     }
     private static void updateCustomer(){
+
 
     }
     private static void removeCustomer(){
@@ -262,6 +301,7 @@ public class Main {
         } else {
             System.out.println("The customer has not been found, try again.");
         }
+        menu();
     }
     private static void listCustomer(){
         System.out.println("Customer's list.");
@@ -272,5 +312,6 @@ public class Main {
         } else{
             System.out.println("The Customer's list is empty.");
         }
+        menu();
     }
 }
