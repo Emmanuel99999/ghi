@@ -3,6 +3,7 @@
 //Valeria Sucerquia Alvarez
 package Main;
 import model.Employee;
+import model.Account;
 import model.Customer;
 import controller.EmployeeController;
 import controller.CustomerController;
@@ -122,8 +123,9 @@ public class Main {
             //System.out.println(name+lastName+dateOfBirth+gender+emailAddress+password+wage+title+startingDate);
 
             //TODO crear objeto cuenta
+            Account objAccount = new Account(emailAddress,password,accountStatus);
 
-            Employee objEmployee = new Employee(name, lastName, emailAddress, dateOfBirth, id, gender, password, jobId, wage, title, startingDate, accountStatus);
+            Employee objEmployee = new Employee(name, lastName, emailAddress, dateOfBirth, id, gender, password, jobId, wage, title, startingDate, accountStatus, objAccount);
             if(objEmployeeController.register(objEmployee, null)){
                 System.out.println("\n Employee has been successfully created!");
             } else {
@@ -193,8 +195,9 @@ public class Main {
             String startingDate= scanner.nextLine();
 
             boolean accountStatus =true;
+            Account objAccount = new Account(emailAddress,password,accountStatus);
 
-            Employee objEmployee = new Employee(name, lastName, emailAddress, dateOfBirth, id, gender, password, jobId, wage, title, startingDate, accountStatus);
+            Employee objEmployee = new Employee(name, lastName, emailAddress, dateOfBirth, id, gender, password, jobId, wage, title, startingDate, accountStatus, objAccount);
 
             if (objEmployeeController.update(searchEmployee, objEmployee,null)) {
                 System.out.println("Record successfully updated");

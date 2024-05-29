@@ -6,6 +6,7 @@ public class Account {
     private String emailAddress;
     private String password;
     private boolean accountStatus;
+
     public String getEmailAddress() {
         return emailAddress;
     }
@@ -24,4 +25,12 @@ public class Account {
     public void setAccountStatus(boolean accountStatus) {
         this.accountStatus = accountStatus;
     }
+
+    public Account(String emailAddress, String password, boolean accountStatus){
+        this.emailAddress= emailAddress;
+        this.password= password;
+        this.accountStatus= accountStatus;
+
+    }
+
 }

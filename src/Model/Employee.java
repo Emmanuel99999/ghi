@@ -8,6 +8,7 @@ public class Employee extends Person{
     private String title;
     private String startingDate;
     private boolean accountStatus= true;
+    private Account objAccount;
 
     public String getPassword() {
         return password;
@@ -45,7 +46,7 @@ public class Employee extends Person{
     public void setAccountStatus(boolean accountStatus) {
         this.accountStatus = accountStatus;
     }
-    public Employee(String name, String lastName, String emailAddress, String dateOfBirth, String id, char gender, String password,String jobId, float wage, String title, String startingDate, boolean accountStatus){
+    public Employee(String name, String lastName, String emailAddress, String dateOfBirth, String id, char gender, String password,String jobId, float wage, String title, String startingDate, boolean accountStatus,Account objAccount){
         super(name,lastName,emailAddress,dateOfBirth,id,gender);
         this.password = password;
         this.jobId = jobId;
@@ -53,6 +54,7 @@ public class Employee extends Person{
         this.title = title;
         this.startingDate = startingDate;
         this.accountStatus = accountStatus;
+        this.objAccount= objAccount;
 
     } //(name, lastName, emailAddress, dateOfBirth, id, gender, password, jobId, wage, title, startingDate, accountStatus)
 }
