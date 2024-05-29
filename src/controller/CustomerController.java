@@ -34,12 +34,12 @@ public class CustomerController extends PersonController{
     public boolean update(String name, Employee objEmployee, Customer objCustomer){
         boolean result =false;
 
-        for(Customer objCustomer :listObjCustomers){
-            if(objCustomer.getName().equals(name)){
-                objCustomer.setId(objCustomer.getId());
-                objCustomer.setName(objCustomer.getName());
-                objCustomer.setLastName(objCustomer.getLastName());
-                objCustomer.setAdvertise(objCustomer.getAdvertise());
+        for(Customer obCustomer : listObjCustomers){
+            if(obCustomer.getName().equals(name)){
+                obCustomer.setId(obCustomer.getId());
+                obCustomer.setName(obCustomer.getName());
+                obCustomer.setLastName(obCustomer.getLastName());
+                obCustomer.setAdvertise(obCustomer.getAdvertise());
 
                 result = true;
             }

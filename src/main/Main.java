@@ -71,11 +71,12 @@ public class Main {
         }
         else{
             System.out.println("Please type a valid option");
+            menu();
         }
 
     }
 //employee functions
-    private static void registerEmployee(){
+    private static void registerEmployee(){  //TODO Create account
         final Scanner scanner = new Scanner(System.in);
         char answer;
         do{
@@ -148,19 +149,17 @@ public class Main {
         }
         menu();
     }
-    private static void updateEmployee(){
+    private static void updateEmployee(){//TODO  function is not updating
         System.out.println("type the Employees name to update");
         String searchEmployee =scanner.nextLine();
 
-        String result = objCustomerController.search(searchEmployee);
+        String result = objEmployeeController.search(searchEmployee);
         if (result!= "") {
-            System.out.println(result);
-            String jobId ="";
-            do {
-                System.out.println("Type the employee's job Id");
-                jobId=scanner.nextLine();
-            } while (jobId=="");
             String empty;
+
+            System.out.println("Type the employee's job Id");
+            String jobId=scanner.nextLine();
+
             System.out.println("Please type your government Id");
             String id = scanner.nextLine();
 
@@ -192,6 +191,19 @@ public class Main {
 
             System.out.println("Please enter your sign in day.");
             String startingDate= scanner.nextLine();
+
+            boolean accountStatus =true;
+
+            Employee objEmployee = new Employee(name, lastName, emailAddress, dateOfBirth, id, gender, password, jobId, wage, title, startingDate, accountStatus);
+
+            if (objEmployeeController.update(searchEmployee, objEmployee,null)) {
+                System.out.println("Record successfully updated");
+            } else{
+                System.out.println("employee not updated, try again!.");
+            }
+
+        } else{
+            System.out.println("Employee not found, try again!.");
         }
         menu();
     }
@@ -273,7 +285,7 @@ public class Main {
         if(answer=='E'){
             registerEmployee();
         }
-        
+
     } while (answer=='Y');
     menu();
     }
@@ -288,9 +300,58 @@ public class Main {
         }
         menu();
     }
-    private static void updateCustomer(){
+    private static void updateCustomer(){  // TODO update is not working
+        System.out.println("Type the customer's name to update");
+        String searchCustomer =scanner.nextLine();
+        String result = objCustomerController.search(searchCustomer);
+        if (result!= "") {
 
+        System.out.println("Please type your government Id");
+        String id = scanner.nextLine();
 
+        System.out.println("Please type your name.");
+        String name = scanner.nextLine();
+
+        System.out.println("Please type your last name.");
+        String lastName = scanner.nextLine();
+
+        System.out.println("Please type your date of birth.");
+        String dateOfBirth= scanner.nextLine();
+
+        System.out.println("Please type your gender, M: male, F: female, O: other");
+        char gender = scanner.next().toUpperCase().charAt(0);
+        String empty = scanner.nextLine();
+
+        System.out.println("Please type your email address.");
+        String emailAddress = scanner.nextLine();
+
+        System.out.println("Would you like to subscribe to our advertisements? Y for yes, N for no");
+        char advertise = scanner.next().toUpperCase().charAt(0);
+
+        System.out.println("would you like to subscribe to our newsletter?");
+        char news = scanner.next().toUpperCase().charAt(0);
+
+        System.out.println("Would you like to subscribe to our discounts?");
+        char discounts = scanner.next().toUpperCase().charAt(0);
+
+        System.out.println("would you like to subscribe to our promotion campaigns?");
+        char promos = scanner.next().toUpperCase().charAt(0);
+
+        System.out.println("would you like to participate on our referral program?");
+        char referralProgram = scanner.next().toUpperCase().charAt(0);
+
+        Customer objCustomer =new Customer(name, lastName, emailAddress, dateOfBirth, id, gender, advertise, news, discounts, promos, referralProgram );
+
+        if (objCustomerController.update(searchCustomer, null,objCustomer)) {
+            System.out.println("Record successfully updated");
+        } else{
+            System.out.println("Customer not updated, try again!.");
+        }
+
+    } else{
+        System.out.println("Customer not found, try again!.");
+    }
+    menu();
     }
     private static void removeCustomer(){
         System.out.println("please type the name of the customer to delete");

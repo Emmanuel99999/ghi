@@ -35,13 +35,22 @@ public class EmployeeController extends PersonController {
     public boolean update(String name, Employee objEmployee, Customer objCustomer){
         boolean result =false;
 
-        for(Employee objEmployee :listObjEmployees){
+        for(Employee individual : listObjEmployees){
             if(objEmployee.getName().equals(name)){
-                objEmployee.setJobId(objEmployee.getJobId());
-                objEmployee.setName(objEmployee.getName());
-                objEmployee.setLastName(objEmployee.getLastName());
-                objEmployee.setTitle(objEmployee.getTitle());
+                individual.setJobId(individual.getJobId());
+                individual.setId(individual.getId());
+                individual.setName(individual.getName());
+                individual.setLastName(individual.getLastName());
+                individual.setDateOfBirth(individual.getDateOfBirth());
+                individual.setGender(individual.getGender());
+                individual.setEmailAddress(individual.getEmailAddress());
+                individual.setPassword(individual.getPassword());
+                individual.setWage(individual.getWage());
+                individual.setTitle(individual.getTitle());
+                individual.setStartingDate(individual.getStartingDate());
 
+
+//(name, lastName, emailAddress, dateOfBirth, id, gender, password, jobId, wage, title, startingDate, accountStatus);
                 result = true;
             }
         }

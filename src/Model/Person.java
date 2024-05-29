@@ -9,6 +9,10 @@ protected String dateOfBirth;
 protected String id;
 protected char gender;
 
+public void setGender(char gender) {
+    this.gender = gender;
+}
+
 //getters
 public String getName() {
     return name;
